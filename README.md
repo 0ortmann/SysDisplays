@@ -20,11 +20,11 @@ When pressing the audio keys, the display shall - well, get displayd.
 A sample xbindkeys entry could look like
 
 ```
-\#Decrease Volume Master
+#Decrease Volume Master
 "amixer sset Master 2-; python /home/flx/workspace/python/VolumeDisplay/volume_display.py"
   XF86AudioLowerVolume
 
-\#Increase Volume Master
+#Increase Volume Master
 "amixer sset Master 2+; python /home/flx/workspace/python/VolumeDisplay/volume_display.py"
   XF86AudioRaiseVolume
 ```
