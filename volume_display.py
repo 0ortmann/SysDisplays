@@ -19,11 +19,11 @@ class VolDisplay(Gtk.Window):
 
     def __init__(self):
         Gtk.Window.__init__(self, type = Gtk.WindowType.POPUP)
-        self.set_border_width(20)
+        self.set_border_width(15)
         self.set_default_size(50, 180)
         self.set_decorated(False)
         self.move(80, 200) # distance to top left corner
-        self.modify_bg(Gtk.StateType.NORMAL, Gdk.Color(6400, 6400, 6400)) ## little blacky
+        self.modify_bg(Gtk.StateType.NORMAL, Gdk.color_parse("#222")) ## little greyish
 
 
         vbox = Gtk.Box(orientation=Gtk.Orientation.VERTICAL)
@@ -31,6 +31,7 @@ class VolDisplay(Gtk.Window):
         self.volumeBar = Gtk.ProgressBar()
         self.volumeBar.set_orientation(Gtk.Orientation.VERTICAL)
         self.volumeBar.set_inverted(True)
+        self.volumeBar.override_background_color(Gtk.StateFlags.NORMAL, Gdk.RGBA(0.3, 0.5, 0.85, 0.25))
         vbox.pack_start(self.volumeBar, True, True, 0)
 
         self.masterVol = False
@@ -54,12 +55,13 @@ class VolDisplay(Gtk.Window):
 
         if self.masterMute != mutes[0]:
             self.masterMute = mutes[0]
-            if(self.masterMute == 1):
-                self.volumeBar.set_fraction(0)
-            else:
-                self.volumeBar.set_fraction(self.masterVol/100)
-
             self.prolongLiving()
+
+        if(self.masterMute == 1):
+            self.volumeBar.set_fraction(0)
+        else:
+            self.volumeBar.set_fraction(self.masterVol/100)
+
 
 
         return True
