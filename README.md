@@ -19,6 +19,7 @@ Put the script where you want it to be and edit your xbindkeys config file.
 When pressing the audio keys, the display shall - well, get displayd.
 A sample xbindkeys entry could look like
 
+```
 \#Decrease Volume Master
 "amixer sset Master 2-; python /home/flx/workspace/python/VolumeDisplay/volume_display.py"
   XF86AudioLowerVolume
@@ -26,6 +27,7 @@ A sample xbindkeys entry could look like
 \#Increase Volume Master
 "amixer sset Master 2+; python /home/flx/workspace/python/VolumeDisplay/volume_display.py"
   XF86AudioRaiseVolume
+```
 
 Replace the path with your proper path. Replace the keyname (here 'XF86AudioRaiseVolume' or 'XF86AudioLowerVolume') with the key you need it to map against.
 
