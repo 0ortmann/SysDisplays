@@ -76,3 +76,11 @@ A sample xbindkeys entry could look like
 "python /your/path/to/file/sysbars.py 'backlight'"
   XF86MonBrightnessUp
 
+
+How it works:
+
+The script reads in the value of the 'actual_brightness' file under the systems backlight folder and displays it in a progressbar. After a delay of (per default) 2,5 seconds, the display vanishes. If no display can be seen, no process is running.
+When the triggering key is pressed again while the window is visble, no new script instance will get started. The existing display will prolong its display time for another (per default) 2,5 seconds.
+The living time can be changed. Change the constant "DISPLAY_DURATION" at the top of the file to the amount of milliseconds you want.
+
+
