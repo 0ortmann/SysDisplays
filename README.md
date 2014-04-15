@@ -75,7 +75,7 @@ A sample xbindkeys entry could look like
 #Increase Volume Master
 "python /your/path/to/file/sysbars.py 'backlight'"
   XF86MonBrightnessUp
-
+```
 
 How it works:
 
