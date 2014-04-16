@@ -108,10 +108,9 @@ class BacklightDisplay(BarDisplay):
             self.brightness = brightness
             self.prolongLiving()
 
-        else:
-            self.volumeBar.set_fraction(self.brightness / 15)
-            self.label.set_markup(
-                "<span foreground='white' size='small'>" + str(self.brightness) + "</span>")
+        self.volumeBar.set_fraction(self.brightness / 15)
+        self.label.set_markup(
+            "<span foreground='white' size='small'>" + str(self.brightness) + "</span>")
 
         return True
 
