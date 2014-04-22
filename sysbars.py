@@ -94,7 +94,7 @@ class BacklightDisplay(BarDisplay):
 
         global BACKLIGHT_DIR, MAXIMUM_KEY
 
-        self.brightness = False
+        self.brightness = 0
         self.max = int(open(BACKLIGHT_DIR + MAXIMUM_KEY).read())
 
     def updateBar(self):
@@ -108,7 +108,7 @@ class BacklightDisplay(BarDisplay):
             self.brightness = brightness
             self.prolongLiving()
 
-        self.volumeBar.set_fraction(self.brightness / 15)
+        self.volumeBar.set_fraction(self.brightness / self.max)
         self.label.set_markup(
             "<span foreground='white' size='small'>" + str(self.brightness) + "</span>")
 
@@ -127,8 +127,8 @@ class VolDisplay(BarDisplay):
         """ Initialises the special fields for this display bar."""
         self.windowType = "volume"
 
-        self.masterVol = False
-        self.masterMute = False
+        self.masterVol = 0
+        self.masterMute = 0
 
     def updateBar(self):
         """ Updates the volume in the bar. """
