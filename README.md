@@ -1,6 +1,11 @@
 SysDisplays
 ===========
 
+Note: 2018-03-11:
+Discontinued project.
+Importing `Gtk` into python takes that damn long that I recommend to not use this script. Well, not really long for you but the CPU. It will boast loads for a short sec, so connecting the script to a button and then holding it down sucks.
+
+
 Small gtk popups for displaying some system informations.
 This script can be called with the parameters "volume" and "backlight"
 
